@@ -1,0 +1,108 @@
+<div class="container-fluid" style="margin-left: 250px; padding-top: 20px;">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="d-flex align-items-center">
+      <button class="btn btn-primary me-3" (click)="onNewClick()">New</button>
+      <button class="btn btn-primary me-3" (click)="onExportCsvClick()">Export CSV</button>
+    </div>
+  </div>
+
+
+  <div class="d-flex justify-content-start align-items-center mb-4">
+    <div class="me-3">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="d-flex">
+        <div class="input-group">
+          <input formControlName="searchQuery" class="form-control" placeholder="Enter shared key" type="text">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="me-3">
+      <button class="btn btn-primary" (click)="toggleAdvancedSearch()">Advanced Search</button>
+    </div>
+  </div>
+
+
+  <div [class.d-none]="!isAdvancedSearchVisible" class="card p-3 mb-4">
+    <h5>Advanced Search</h5>
+    <form [formGroup]="advancedSearchForm" (ngSubmit)="onAdvancedSearchSubmit()">
+      <div class="mb-3">
+        <label for="sharedKey" class="form-label">Shared Key</label>
+        <input type="text" id="sharedKey" class="form-control" formControlName="sharedKey" />
+      </div>
+      <div class="mb-3">
+        <label for="businessId" class="form-label">Business ID</label>
+        <input type="text" id="businessId" class="form-control" formControlName="businessId" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" id="phone" class="form-control" formControlName="phone" />
+      </div>
+      <button type="submit" class="btn btn-success">Search Advanced</button>
+    </form>
+  </div>
+
+
+  <div [class.d-none]="!isClientFormVisible" class="card p-3 mb-4">
+    <h5>Create New Client</h5>
+    <form [formGroup]="clientForm" (ngSubmit)="onCreateClient()">
+      <div class="mb-3">
+        <label for="sharedKey" class="form-label">Shared Key</label>
+        <input type="text" id="sharedKey" class="form-control" formControlName="sharedKey" [readonly]="true" />
+      </div>
+      <div class="mb-3">
+        <label for="businessId" class="form-label">Business ID</label>
+        <input type="text" id="businessId" class="form-control" formControlName="businessId" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" />
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber" />
+      </div>
+      <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input type="date" id="startDate" class="form-control" formControlName="startDate" />
+      </div>
+      <div class="mb-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <input type="date" id="endDate" class="form-control" formControlName="endDate" />
+      </div>
+      <button type="submit" class="btn btn-primary">Create Client</button>
+    </form>
+  </div>
+
+  <!-- Tabla de clientes -->
+  <table class="table mt-4">
+    <thead>
+    <tr>
+      <th>Shared Key</th>
+      <th>Business ID</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngIf="clients.length === 0">
+      <td colspan="6" class="text-center">No clients found.</td>
+    </tr>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.sharedKey }}</td>
+      <td>{{ client.businessId }}</td>
+      <td>{{ client.email }}</td>
+      <td>{{ client.phoneNumber }}</td>
+      <td>{{ client.startDate }}</td>
+      <td>{{ client.endDate }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

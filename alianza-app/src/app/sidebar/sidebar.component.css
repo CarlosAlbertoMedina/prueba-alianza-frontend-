@@ -1,0 +1,22 @@
+.nav-link.active-link {
+  background-color: #007bff !important;
+  color: darkblue !important;
+  border-radius: 5px;
+}
+
+.nav-link.active-link:hover {
+  text-decoration: none;
+}
+
+.nav-link i {
+  font-size: 1.2rem;
+}
+
+.sidebar {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar .nav-link {
+  font-family: Arial, sans-serif;
+}
+

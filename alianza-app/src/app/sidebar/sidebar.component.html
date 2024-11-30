@@ -1,0 +1,29 @@
+<!-- Sidebar (usando clases de Bootstrap) -->
+<div class="d-flex flex-column text-black" style="height: 100vh; width: 250px; position: fixed; left: 0; top: 0;">
+  <div class="p-3 text-center">
+    <h4>Alianza</h4>
+  </div>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link text-black p-3" routerLink="/clients" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-users me-2"></i> Clients
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-black p-3" routerLink="/clients-history" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-history me-2"></i> Clients Look History
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-black p-3" routerLink="/emergency-pin-config" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-cogs me-2"></i> Emergency PIN Configuration
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-black p-3" routerLink="/emergency-pin-history" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-clock me-2"></i> Emergency PIN History
+      </a>
+    </li>
+  </ul>
+</div>
