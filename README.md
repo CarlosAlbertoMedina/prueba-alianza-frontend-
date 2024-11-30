@@ -14,6 +14,14 @@ Se debe hacer un servicio rest que permita consultar, buscar por shared key y cr
 # Puntos opcionales
 NOTA: Este punto es opcional, no es necesario hacerlo, pero proporciona puntos extras.
 - Implementar la funcionalidad del buscador avanzado (botón advanced search), tanto en la parte front como en el servicio.
-- Implementar la opción de Exportar (ver botón en la primera pantalla) hacia un archivo csv. 
+- Implementar la opción de Exportar (ver botón en la primera pantalla) hacia un archivo csv.
+
+# Versiones usadas
+- Angular CLI: 15.2.11
+- Node: 18.20.5
+- IDE Webstorm
+![image](https://github.com/user-attachments/assets/822f1ab0-9440-4b20-ad53-97d9298b0e50)
+![image](https://github.com/user-attachments/assets/301fb957-a096-4bea-828d-1fa55ec3b4a4)
+
 
 
